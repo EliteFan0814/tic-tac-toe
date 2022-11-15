@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+
+<body>
+  <button id="btn">哈哈</button>
+  <script>
+    class Car {
+      constructor() {
+        this.type = "实例的车";
+        this.boot = this.boot.bind(this);
+      }
+      boot() {
+        console.log("原型方法：启动！type是：" + this.type);
+      }
+      boot2() {
+        console.log("原型方法：启动！type是：" + this.type);
+      }
+      boot3 = () => {
+        console.log("原型方法：启动！type是：" + this.type);
+      }
+      static trademark() {
+        console.log("每辆车都有自己的品牌");
+      }
+    }
+
+    const car = new Car()
+    car.boot3()
+
+    const boot3 = car.boot3
+    boot3()
+  </script>
+</body>
+
+</html>
